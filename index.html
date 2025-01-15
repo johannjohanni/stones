@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Marker-based AR Example</title>
+    <!-- A-Frame library -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <!-- AR.js for marker-based AR -->
+    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.min.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+      <!-- Camera for AR.js -->
+      <a-marker preset="hiro">
+        <!-- Display a plane with an image in front of the marker -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="1" height="1" material="src: #my-image"></a-plane>
+      </a-marker>
+
+      <!-- Fallback when marker is not detected -->
+      <a-entity camera></a-entity>
+
+      <!-- Image asset definition -->
+      <a-assets>
+        <img id="my-image" src="images/alterschwede.png" />
+      </a-assets>
+    </a-scene>
+  </body>
+</html>
