@@ -13,7 +13,7 @@
       <!-- Camera for AR.js -->
       <a-marker preset="hiro">
         <!-- Display a plane with an image in front of the marker -->
-        <a-plane position="0 0 0" rotation="-90 0 0" width="15" height="15" position="0 -3 0"   material="src: #my-image"></a-plane>
+        <a-plane position="0 0 0" rotation="-90 0 0" width="15" height="15" position="0 -3 0" material="shader: flat; transparent: true; opacity: 1"  material="src: #my-image"></a-plane>
       </a-marker>
 
       <!-- Fallback when marker is not detected -->
