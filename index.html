@@ -12,18 +12,22 @@
     <a-scene embedded arjs>
       <!-- Camera for AR.js -->
       <a-marker preset="hiro">
-        <!-- Display a plane with an image in front of the marker -->
-        <a-plane position="0 0 0" rotation="-90 0 0" width="15" height="15" position="0 -3 0"
-                 material="shader: flat; transparent: true; opacity: 1; src: #my-image">
-        </a-plane>
+        <!-- Display a 3D model (GLTF/GLB) on top of the marker -->
+        <a-gltf-model 
+          src="#my-3d-model" 
+          position="0 0.5 0"
+          scale="0.5 0.5 0.5"
+          rotation="0 0 0">
+        </a-gltf-model>
       </a-marker>
 
       <!-- Fallback when marker is not detected -->
       <a-entity camera></a-entity>
 
-      <!-- Image asset definition -->
+      <!-- Asset definitions -->
       <a-assets>
-        <img id="my-image" src="images/alterschwede.png" />
+        <!-- 3D model in GLTF/GLB format -->
+        <a-asset-item id="my-3d-model" src="granite_grey_stone.glb"></a-asset-item>
       </a-assets>
     </a-scene>
   </body>
