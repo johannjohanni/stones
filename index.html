@@ -9,8 +9,10 @@
     <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.min.js"></script>
   </head>
   <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs="sourceType: webcam; smooth: true; smoothCount: 10; smoothTolerance: 0.01; smoothThreshold: 5;"></a-scene>
-      <!-- Camera for AR.js -->
+    <!-- AR scene with smooth tracking enabled -->
+    <a-scene embedded arjs="sourceType: webcam; smooth: true; smoothCount: 10; smoothTolerance: 0.01; smoothThreshold: 5;">
+      
+      <!-- Marker with custom model placed on top -->
       <a-marker preset="hiro" size="0.2">
         <!-- Display a 3D model (GLTF/GLB) on top of the marker -->
         <a-gltf-model 
@@ -29,6 +31,7 @@
         <!-- 3D model in GLTF/GLB format -->
         <a-asset-item id="my-3d-model" src="granite_grey_stone.glb"></a-asset-item>
       </a-assets>
+
     </a-scene>
   </body>
 </html>
